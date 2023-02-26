@@ -6,7 +6,7 @@ let counter = 0;
 class Counter {
     constructor() {
         if (instance) {
-            Error("You can only create one instance!");
+            throw new Error("You can only create one instance!");
         }
         instance = this
     }
@@ -24,6 +24,6 @@ class Counter {
     }
 }
 
-const SingletonCounter = Object.freeze(Counter());
+const SingletonCounter = Object.freeze(new Counter());
 
 export default SingletonCounter;
